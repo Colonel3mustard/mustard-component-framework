@@ -1,4 +1,3 @@
-import MustardBtn from 'src/components/MustardBtn.vue';
 <script setup lang="ts">
 import MustardBtn from './components/MustardBtn.vue';
 const testButton = 'Click me!';
