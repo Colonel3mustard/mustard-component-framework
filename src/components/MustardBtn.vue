@@ -14,7 +14,7 @@ defineProps<Props>();
 
 <style scoped>
 .btn {
-  border: 3px solid #001d3d;
+  border: 3px solid #003566;
   position: relative;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -22,16 +22,15 @@ defineProps<Props>();
   line-height: 2;
   height: 50px;
   transition: all 200ms linear;
-  border-radius: 30px;
+  border-radius: 20px;
   width: 220px;
-  letter-spacing: 1px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   background-color: #ffd60a;
   cursor: pointer;
-  color: #001d3d;
+  color: #003566;
   box-shadow: 0 12px 35px 0 rgba(255, 235, 167, 0.15);
 }
 
