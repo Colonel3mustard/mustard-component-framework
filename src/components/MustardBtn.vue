@@ -14,39 +14,25 @@ defineProps<Props>();
 
 <style scoped>
 .btn {
-  background-color: #e1ecf4;
-  border-radius: 3px;
-  border: 1px solid #7aa7c7;
-  box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
-  box-sizing: border-box;
-  color: #39739d;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 18px;
-  line-height: 1.5;
-  margin: 0;
-  outline: none;
-  padding: 8px 0.8em;
+  border: 3px solid #001d3d;
   position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 2;
+  height: 50px;
+  transition: all 200ms linear;
+  border-radius: 30px;
+  width: 220px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  vertical-align: baseline;
-  white-space: nowrap;
-}
-
-.btn:hover,
-.btn:focus {
-  background-color: #b3d3ea;
-  color: #2c5777;
-}
-
-.btn:focus {
-  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
-}
-
-.btn:active {
-  background-color: #a0c7e4;
-  box-shadow: none;
-  color: #2c5777;
+  background-color: #ffd60a;
+  cursor: pointer;
+  color: #001d3d;
+  box-shadow: 0 12px 35px 0 rgba(255, 235, 167, 0.15);
 }
 
 .dot-elastic {
