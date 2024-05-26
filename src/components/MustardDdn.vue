@@ -28,6 +28,7 @@ defineProps<Props>();
   max-width: 100%;
   text-align: center;
   z-index: 200;
+  margin: 5px;
 }
 [type='checkbox']:checked,
 [type='checkbox']:not(:checked) {
@@ -56,12 +57,12 @@ defineProps<Props>();
   background-color: #ffd60a;
   cursor: pointer;
   color: #003566;
-  box-shadow: 0 12px 35px 0 rgba(255, 235, 167, 0.15);
+  box-shadow: 0px 3px 0px lightgray;
 }
 .secCenter .forDropdown {
   background-color: #003566;
   color: #ffd60a;
-  box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+  box-shadow: 0px 3px 0px lightgray;
 }
 .dropdown:checked + label:before,
 .dropdown:not(:checked) + label:before {
@@ -96,9 +97,9 @@ defineProps<Props>();
   top: 70px;
   left: 0;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 10px;
   display: block;
-  box-shadow: 0 14px 35px 0 rgba(9, 9, 12, 0.4);
+  box-shadow: 0px 3px 0px lightgray;
   z-index: 2;
   opacity: 0;
   pointer-events: none;
@@ -107,7 +108,7 @@ defineProps<Props>();
 }
 .secCenter .sectionDropdown {
   background-color: #fff;
-  box-shadow: 0 14px 35px 0 rgba(9, 9, 12, 0.15);
+  box-shadow: 2px 3px 5px lightgray;
 }
 .dropdown:checked ~ .sectionDropdown {
   opacity: 1;

@@ -1,7 +1,7 @@
 <template>
-  <button class="btn">
-    <slot v-if="!loading"></slot>
-    <div v-else class="dot-elastic"></div>
+  <button :class="loading ? 'btn loading' : 'btn'">
+    <div :class="{ isHidden: loading }"><slot></slot></div>
+    <div v-show="loading" class="dot-elastic"></div>
   </button>
 </template>
 
@@ -13,6 +13,10 @@ defineProps<Props>();
 </script>
 
 <style scoped>
+.isHidden {
+  opacity: 0;
+}
+
 .btn {
   border: 3px solid #003566;
   position: relative;
@@ -23,7 +27,7 @@ defineProps<Props>();
   height: 50px;
   transition: all 200ms linear;
   border-radius: 20px;
-  width: 220px;
+  width: fit-content;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -31,16 +35,19 @@ defineProps<Props>();
   background-color: #ffd60a;
   cursor: pointer;
   color: #003566;
-  box-shadow: 0 12px 35px 0 rgba(255, 235, 167, 0.15);
+  box-shadow: 0px 3px 0px lightgrey;
+  margin: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .dot-elastic {
-  position: relative;
+  position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #39739d;
-  color: #39739d;
+  background-color: #003566;
+  color: #003566;
   animation: dot-elastic 1s infinite linear;
 }
 
@@ -57,8 +64,8 @@ defineProps<Props>();
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #39739d;
-  color: #39739d;
+  background-color: #003566;
+  color: #003566;
   animation: dot-elastic-before 1s infinite linear;
 }
 
@@ -67,8 +74,8 @@ defineProps<Props>();
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #39739d;
-  color: #39739d;
+  background-color: #003566;
+  color: #003566;
   animation: dot-elastic-after 1s infinite linear;
 }
 
