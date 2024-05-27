@@ -1,18 +1,19 @@
 <template>
   <div class="formInput">
-    <label for="input" class="label">{{ label }}</label
+    <label v-if="label" for="input" class="label">{{ label }}</label
     ><br />
     <div class="inputBorder">
       <i :class="getInputIcon()"></i>
-      <input :type="type" id="input" />
+      <input :type="type" :placeholder="placeholder" id="input" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 interface Props {
-  label: string;
+  label?: string;
   type?: string;
+  placeholder?: string;
 }
 
 const props = defineProps<Props>();
@@ -57,7 +58,7 @@ function getInputIcon(): string {
   height: 40px;
   transition: all 200ms linear;
   border-radius: 20px;
-  width: 220px;
+  width: fit-content;
   display: inline-flex;
   align-items: left;
   justify-content: left;
