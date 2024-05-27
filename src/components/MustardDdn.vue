@@ -49,7 +49,7 @@ defineProps<Props>();
   height: 44px;
   transition: all 200ms linear;
   border-radius: 20px;
-  width: 220px;
+  width: fit-content;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -58,6 +58,8 @@ defineProps<Props>();
   cursor: pointer;
   color: #003566;
   box-shadow: 0px 3px 0px lightgray;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .secCenter .forDropdown {
   background-color: #003566;
