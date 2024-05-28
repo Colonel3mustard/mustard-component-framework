@@ -41,6 +41,10 @@ defineProps<Props>();
   padding-right: 20px;
 }
 
+.btn:hover {
+  background-color: #e0bc09;
+}
+
 .dot-elastic {
   position: absolute;
   width: 10px;

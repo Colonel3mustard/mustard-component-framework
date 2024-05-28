@@ -68,6 +68,7 @@ function getInputIcon(): string {
   box-shadow: inset 0px 3px 0px lightgrey;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: white;
 }
 
 #input {
