@@ -4,6 +4,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #e0f2e9;
 }
 
 h1 {

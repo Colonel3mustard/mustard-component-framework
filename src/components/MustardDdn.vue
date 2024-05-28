@@ -30,6 +30,7 @@ defineProps<Props>();
   z-index: 200;
   margin: 5px;
 }
+
 [type='checkbox']:checked,
 [type='checkbox']:not(:checked) {
   position: absolute;
@@ -61,11 +62,18 @@ defineProps<Props>();
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.dropdown:checked:hover + label,
+.dropdown:not(:checked):hover + label {
+  background-color: #e0bc09;
+}
+
 .secCenter .forDropdown {
   background-color: #003566;
   color: #ffd60a;
   box-shadow: 0px 3px 0px lightgray;
 }
+
 .dropdown:checked + label:before,
 .dropdown:not(:checked) + label:before {
   position: fixed;
@@ -78,20 +86,24 @@ defineProps<Props>();
   cursor: auto;
   pointer-events: none;
 }
+
 .dropdown:checked + label:before {
   pointer-events: auto;
 }
+
 .dropdown:not(:checked) + label .fa-solid {
-  font-size: 18px;
+  font-size: 20px;
   margin-left: 10px;
   transition: transform 200ms linear;
 }
+
 .dropdown:checked + label .fa-solid {
   transform: rotate(135deg);
-  font-size: 18px;
+  font-size: 20px;
   margin-left: 10px;
   transition: transform 200ms linear;
 }
+
 .sectionDropdown {
   position: absolute;
   padding: 5px;
@@ -108,15 +120,18 @@ defineProps<Props>();
   transform: translateY(20px);
   transition: all 200ms linear;
 }
+
 .secCenter .sectionDropdown {
   background-color: #fff;
   box-shadow: 2px 3px 5px lightgray;
 }
+
 .dropdown:checked ~ .sectionDropdown {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
+
 .sectionDropdown:before {
   position: absolute;
   top: -20px;
@@ -127,6 +142,7 @@ defineProps<Props>();
   display: block;
   z-index: 1;
 }
+
 .sectionDropdown:after {
   position: absolute;
   top: -7px;
@@ -141,6 +157,7 @@ defineProps<Props>();
   z-index: 2;
   transition: all 200ms linear;
 }
+
 .secCenter .sectionDropdown:after {
   border-bottom: 8px solid #fff;
 }
@@ -163,31 +180,22 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+
 .secCenter .sectionDropdown a {
   color: #003566;
 }
+
 a:hover {
   color: #003566;
   background-color: #ffd60a;
 }
+
 .secCenter .sectionDropdown a:hover {
   color: #ffd60a;
   background-color: #003566;
 }
+
 a .fa-solid {
   font-size: 22px;
-}
-
-.dropdownSub:checked + label:hover,
-.dropdownSub:not(:checked) + label:hover {
-  color: #003566;
-  background-color: #ffd60a;
-}
-.secCenter .sectionDropdown .forDropdownSub {
-  color: #003566;
-}
-.secCenter .sectionDropdown .forDropdownSub:hover {
-  color: #ffd60a;
-  background-color: #003566;
 }
 </style>
