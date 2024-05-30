@@ -26,6 +26,7 @@ import MustardCheckGroup from './components/MustardCheckGroup.vue';
 import MustardDdn from './components/MustardDdn.vue';
 import MustardInput from './components/MustardInput.vue';
 import MustardNavBar from './components/MustardNavBar.vue';
+import { Card, NavItem } from './types/Mustard';
 
 // Button Section
 const testButton = 'Click me!';
@@ -49,11 +50,6 @@ const placeholder = 'ex. mark@mustard.com';
 const type = 'email';
 
 // Card Section
-interface Card {
-  title: string;
-  subtitle: string;
-  imgSrc: string;
-}
 const items: Card[] = [
   { title: 'Greg Bennett', subtitle: '(626) 485-2957', imgSrc: getImage('./assets/Profile1.jpg') },
   { title: 'Ann Johnson', subtitle: '(513) 903-8042', imgSrc: getImage('./assets/Profile2.jpg') },
@@ -71,11 +67,6 @@ function getImage(imagePath: string) {
 }
 
 // Nav Section
-interface NavItem {
-  name: string;
-  link: string;
-  image?: string;
-}
 const navItems: NavItem[] = [
   { name: 'Home', link: '' },
   { name: 'News', link: '' },

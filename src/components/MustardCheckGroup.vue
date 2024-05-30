@@ -20,8 +20,8 @@ defineProps<Props>();
 .checkGroup {
   border: 3px solid #003566;
   border-radius: 20px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 400;
   font-size: 18px;
   height: fit-content;
   transition: all 200ms linear;

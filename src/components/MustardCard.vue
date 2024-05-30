@@ -9,14 +9,12 @@
 </template>
 
 <script setup lang="ts">
+import { Card } from '../types/Mustard';
+
 interface Props {
   item: Card;
 }
-interface Card {
-  title: string;
-  subtitle: string;
-  imgSrc: string;
-}
+
 defineProps<Props>();
 </script>
 
@@ -38,7 +36,7 @@ defineProps<Props>();
   box-shadow: 0px 3px 0px lightgrey;
   background-color: white;
   padding: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   color: #003566;
 }
 

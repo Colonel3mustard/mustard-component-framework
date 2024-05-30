@@ -20,7 +20,7 @@ defineProps<Props>();
 .btn {
   border: 3px solid #003566;
   position: relative;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 2;

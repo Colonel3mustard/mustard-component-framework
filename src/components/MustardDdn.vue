@@ -9,20 +9,16 @@
 </template>
 
 <script setup lang="ts">
-interface Item {
-  name: string;
-  link: string;
-}
+import { DropdownItem } from '../types/Mustard';
+
 interface Props {
-  items: Item[];
+  items: DropdownItem[];
   title: string;
 }
 defineProps<Props>();
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-
 .secCenter {
   position: relative;
   max-width: 100%;
@@ -43,7 +39,7 @@ defineProps<Props>();
 .dropdown:not(:checked) + label {
   border: 3px solid #003566;
   position: relative;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 2;
@@ -166,7 +162,7 @@ a {
   position: relative;
   color: #fff;
   transition: all 200ms linear;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 500;
   font-size: 15px;
   border-radius: 2px;
