@@ -57,7 +57,7 @@ function scrollFunction() {
   z-index: 99999;
   background-color: #003566;
   margin: 0;
-  padding: 40px 10px;
+  padding: 30px 10px;
   transition: 0.6s;
 }
 
