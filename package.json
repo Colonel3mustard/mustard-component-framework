@@ -1,6 +1,6 @@
 {
   "name": "mustard-component-framework",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "files": [
     "dist"
@@ -9,12 +9,12 @@
   "module": "./dist/mustard-component-framework.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/mustard-component-framework.js",
       "require": "./dist/mustard-component-framework.umd.cjs"
     },
     "./style.css": "./dist/style.css"
   },
-  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
