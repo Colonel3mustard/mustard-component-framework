@@ -1,6 +1,6 @@
 <template>
   <div id="navBar">
-    <h2 id="siteTitle" href="/">Mustard Contact App</h2>
+    <h2 id="siteTitle" href="/">{{ title }}</h2>
     <ul>
       <li v-for="(item, index) in items" :key="index">
         <img v-if="item.image" :src="item.image" :href="item.link" />
@@ -14,6 +14,7 @@
 import { NavItem } from '../types/Mustard';
 
 interface Props {
+  title: string;
   items: NavItem[];
 }
 defineProps<Props>();

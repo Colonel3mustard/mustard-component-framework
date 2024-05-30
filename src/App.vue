@@ -1,6 +1,6 @@
 <template>
   <div style="margin-top: 200px !important">
-    <MustardNavBar :items="navItems"></MustardNavBar>
+    <MustardNavBar :items="navItems" :title="navTitle"></MustardNavBar>
     <MustardBtn @click="btnClick()" :loading="loading" :label="testButton"></MustardBtn>
     <MustardDdn :items="itemsDropdown" :title="title"></MustardDdn>
     <MustardInput :label="label" :placeholder="placeholder" :type="type || ''"></MustardInput>
@@ -73,6 +73,7 @@ const navItems: NavItem[] = [
   { name: 'Contact', link: '' },
   { name: 'About', link: '' },
 ];
+const navTitle = 'Mustard Contact App';
 </script>
 
 <style scoped>

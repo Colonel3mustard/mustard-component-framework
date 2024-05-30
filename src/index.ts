@@ -5,6 +5,7 @@ import MustardCheckGroup from './components/MustardCheckGroup.vue';
 import MustardDdn from './components/MustardDdn.vue';
 import MustardInput from './components/MustardInput.vue';
 import MustardNavBar from './components/MustardNavBar.vue';
+import { Card, DropdownItem, NavItem } from './types/Mustard';
 
 export {
   MustardBtn,
@@ -15,3 +16,5 @@ export {
   MustardInput,
   MustardNavBar,
 };
+
+export type { Card, DropdownItem, NavItem };
