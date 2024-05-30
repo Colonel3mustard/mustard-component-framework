@@ -1,6 +1,6 @@
 <template>
   <button :class="loading ? 'btn loading' : 'btn'">
-    <div :class="{ isHidden: loading }"><slot></slot></div>
+    <div :class="{ isHidden: loading }">{{ label }}</div>
     <div v-show="loading" class="dot-elastic"></div>
   </button>
 </template>
@@ -8,6 +8,7 @@
 <script setup lang="ts">
 interface Props {
   loading?: boolean;
+  label: string;
 }
 defineProps<Props>();
 </script>

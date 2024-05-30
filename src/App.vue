@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div style="margin-top: 200px !important">
     <MustardNavBar :items="navItems"></MustardNavBar>
-    <MustardBtn @click="btnClick()" :loading="loading"> {{ testButton }}</MustardBtn>
+    <MustardBtn @click="btnClick()" :loading="loading" :label="testButton"></MustardBtn>
     <MustardDdn :items="itemsDropdown" :title="title"></MustardDdn>
     <MustardInput :label="label" :placeholder="placeholder" :type="type || ''"></MustardInput>
-    <MustardCheck>{{ 'check1' }}</MustardCheck>
+    <MustardCheck :label="'check1'"></MustardCheck>
     <MustardCheckGroup :labels="['check2', 'check3']" title="Check Group Test"></MustardCheckGroup>
 
     <div class="cardList">

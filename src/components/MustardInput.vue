@@ -142,6 +142,15 @@ function formatPhoneText(): string {
 
   return inputText.value;
 }
+
+defineExpose({
+  inputText,
+  invalid,
+  validate,
+  getErrorText,
+  keyUp,
+  formatPhoneText,
+});
 </script>
 
 <style scoped>

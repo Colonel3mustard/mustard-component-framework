@@ -2,7 +2,7 @@
   <fieldset class="checkGroup">
     <legend>{{ title }}</legend>
     <div class="checkContainer">
-      <MustardCheck v-for="(label, index) in labels" :key="index">{{ label }}</MustardCheck>
+      <MustardCheck v-for="(label, index) in labels" :key="index" :label></MustardCheck>
     </div>
   </fieldset>
 </template>
