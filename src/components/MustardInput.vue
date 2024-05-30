@@ -76,14 +76,14 @@ function getInputIcon(): string {
   border: none;
   padding-left: 10px;
   padding-right: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 2;
 }
 
 .label {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 500;
   font-size: 18px;
   display: inline-flex;

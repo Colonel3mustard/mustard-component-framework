@@ -25,8 +25,8 @@ function checkClick() {
 <style scoped>
 .container {
   position: relative;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.25;
   height: 50px;
