@@ -19,9 +19,11 @@
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "types": "vue-tsc ",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "dependencies": {
+    "happy-dom": "^6.0.4",
     "vue": "^3.4.21"
   },
   "devDependencies": {

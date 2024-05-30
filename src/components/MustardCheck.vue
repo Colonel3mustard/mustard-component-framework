@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <input type="checkbox" :id="label" :name="label" />
-    <i v-show="checked" class="fa-solid fa-square-check" @click="checkClick()"></i>
-    <i v-show="!checked" class="fa-regular fa-square" @click="checkClick()"></i>
-    <label :for="label" @click="checkClick()"><slot></slot></label>
+    <i v-show="checked" class="fa-solid fa-square-check" @click="click()"></i>
+    <i v-show="!checked" class="fa-regular fa-square" @click="click()"></i>
+    <label :for="label" @click="click()">{{ label }}</label>
   </div>
 </template>
 
@@ -11,14 +11,18 @@
 import { ref } from 'vue';
 
 interface Props {
-  label?: string;
+  label: string;
 }
 defineProps<Props>();
+const emit = defineEmits<{
+  (e: 'click', value: boolean): void;
+}>();
 
 const checked = ref(false);
 
-function checkClick() {
+function click() {
   checked.value = !checked.value;
+  emit('click', checked.value);
 }
 </script>
 
