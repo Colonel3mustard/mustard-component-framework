@@ -10,10 +10,18 @@
     <div :class="{ inputBorder: true, invalid: invalid }">
       <i :class="getInputIcon()"></i>
       <input
+        v-if="type !== InputType.file"
         :type="type"
         :placeholder="placeholder"
         id="input"
         v-model="inputText"
+        @blur="validate()" />
+      <input
+        v-else
+        :type="type"
+        :placeholder="placeholder"
+        id="input"
+        @change="onFileChange"
         @blur="validate()" />
     </div>
     <span v-if="invalid" class="error">{{ getErrorText() }}</span>
@@ -30,6 +38,8 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+
+const emit = defineEmits(['fileChange']);
 
 const [inputText, modifiers] = defineModel<string>({
   required: true,
@@ -133,6 +143,13 @@ function formatPhoneText(value: string): string {
     value = '(' + value.slice(0, 3) + ') ' + value.slice(3, 6) + '-' + value.slice(6);
 
   return value;
+}
+
+function onFileChange(e: Event) {
+  const files = (e.target as HTMLInputElement).files;
+  if (!files) return;
+  console.log(URL.createObjectURL(files[0]));
+  emit('fileChange', URL.createObjectURL(files[0]));
 }
 
 defineExpose({

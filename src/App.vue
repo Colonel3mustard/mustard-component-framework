@@ -3,11 +3,13 @@
     <MustardNavBar :items="navItems" :title="navTitle"></MustardNavBar>
     <MustardBtn @click="btnClick()" :loading="loading" :label="testButton"></MustardBtn>
     <MustardDdn :items="itemsDropdown" :title="title"></MustardDdn>
+    <img :src="inputText" />
     <MustardInput
       :label="label"
       :placeholder="placeholder"
       :type="type || ''"
-      v-model.tel="inputText"></MustardInput>
+      @fileChange="fileChange"
+      v-model="check1"></MustardInput>
     <MustardCheck :label="check1" v-model="check1Model"></MustardCheck>
     <MustardCheckGroup
       :labels="['check2', 'check3']"
@@ -54,7 +56,7 @@ const title = 'Dropdown1';
 // Input Section
 const label = 'Email';
 const placeholder = 'ex. mark@mustard.com';
-const type = 'tel';
+const type = 'file';
 const inputText = ref('');
 
 // Card Section
@@ -86,9 +88,13 @@ const navTitle = 'Mustard Contact App';
 // Check Section
 const check1 = 'check1';
 const check1Model = ref(false);
-watch(check1Model, () => {
-  console.log('Check1:', check1Model.value);
+watch(inputText, () => {
+  console.log('Check1:', inputText.value);
 });
+
+function fileChange(url: string) {
+  inputText.value = url;
+}
 
 const checkGroupModel = ref([false, false]);
 </script>
