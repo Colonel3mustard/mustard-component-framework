@@ -20,7 +20,7 @@
         v-else
         :type="type"
         :placeholder="placeholder"
-        id="input"
+        id="fileInput"
         @change="onFileChange"
         @blur="validate()" />
     </div>
@@ -218,7 +218,7 @@ defineExpose({
   background-color: white;
 }
 
-#input {
+input {
   all: unset;
   border: none;
   padding-left: 10px;
@@ -228,6 +228,10 @@ defineExpose({
   font-size: 15px;
   line-height: 2;
   width: 100%;
+}
+
+#fileInput {
+  padding-top: 7px;
 }
 
 .label {
