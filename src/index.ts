@@ -6,7 +6,7 @@ import MustardDdn from './components/MustardDdn.vue';
 import MustardInput from './components/MustardInput.vue';
 import MustardNavBar from './components/MustardNavBar.vue';
 import MustardSelect from './components/MustardSelect.vue';
-import { Card, DropdownItem, NavItem, selectOption } from './types/Mustard';
+import { Card, DropdownItem, NavItem, SelectOption } from './types/Mustard';
 
 export {
   MustardBtn,
@@ -19,4 +19,4 @@ export {
   MustardSelect,
 };
 
-export type { Card, DropdownItem, NavItem, selectOption };
+export type { Card, DropdownItem, NavItem, SelectOption };
