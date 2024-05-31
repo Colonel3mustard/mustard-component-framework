@@ -148,7 +148,6 @@ function formatPhoneText(value: string): string {
 function onFileChange(e: Event) {
   const files = (e.target as HTMLInputElement).files;
   if (!files) return;
-  console.log(URL.createObjectURL(files[0]));
   emit('fileChange', URL.createObjectURL(files[0]));
 }
 
