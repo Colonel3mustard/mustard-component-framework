@@ -14,8 +14,7 @@
         :placeholder="placeholder"
         id="input"
         v-model="inputText"
-        @blur="validate()"
-        @keyup="keyUp()" />
+        @blur="validate()" />
     </div>
     <span v-if="invalid" class="error">{{ getErrorText() }}</span>
   </div>
@@ -30,9 +29,17 @@ interface Props {
   placeholder?: string;
 }
 
-const inputText = ref('');
-
 const props = defineProps<Props>();
+
+const [inputText, modifiers] = defineModel<string>({
+  required: true,
+  set(value) {
+    if (modifiers.tel) {
+      return formatPhoneText(value);
+    }
+    return value;
+  },
+});
 
 enum InputType {
   email = 'email',
@@ -112,35 +119,20 @@ function getErrorText(): string {
   }
 }
 
-function keyUp(): void {
-  if (props.type === InputType.tel) {
-    inputText.value = formatPhoneText();
-  }
-  if (invalid.value) {
-    validate();
-  }
-}
-
-function formatPhoneText(): string {
-  inputText.value = inputText.value
+function formatPhoneText(value: string): string {
+  value = value
     .trim()
     .replaceAll('-', '')
     .replaceAll('(', '')
     .replaceAll(')', '')
     .replaceAll(' ', '');
 
-  if (inputText.value.length > 3 && inputText.value.length <= 6)
-    inputText.value = '(' + inputText.value.slice(0, 3) + ') ' + inputText.value.slice(3);
-  else if (inputText.value.length > 6)
-    inputText.value =
-      '(' +
-      inputText.value.slice(0, 3) +
-      ') ' +
-      inputText.value.slice(3, 6) +
-      '-' +
-      inputText.value.slice(6);
+  if (value.length > 3 && value.length <= 6)
+    value = '(' + value.slice(0, 3) + ') ' + value.slice(3);
+  else if (value.length > 6)
+    value = '(' + value.slice(0, 3) + ') ' + value.slice(3, 6) + '-' + value.slice(6);
 
-  return inputText.value;
+  return value;
 }
 
 defineExpose({
@@ -148,7 +140,6 @@ defineExpose({
   invalid,
   validate,
   getErrorText,
-  keyUp,
   formatPhoneText,
 });
 </script>

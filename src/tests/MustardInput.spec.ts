@@ -8,12 +8,14 @@ describe('MustardInput', () => {
     const label = 'Test Input';
     const type = 'text';
     const placeholder = 'Enter text';
+    const value = '';
 
     const wrapper = mount(MustardInput, {
       props: {
         label,
         type,
         placeholder,
+        modelValue: value,
       },
     });
 
@@ -27,14 +29,6 @@ describe('MustardInput', () => {
 
     const spy = vi.spyOn(wrapper.vm, 'validate');
     await wrapper.find('input').trigger('blur');
-    expect(spy).toHaveBeenCalled();
-  });
-
-  test('Input keyup triggers keyUp', async () => {
-    const wrapper = mount(MustardInput);
-
-    const spy = vi.spyOn(wrapper.vm, 'keyUp');
-    await wrapper.find('input').trigger('keyup');
     expect(spy).toHaveBeenCalled();
   });
 });

@@ -1,6 +1,6 @@
 <template>
   <div id="navBar">
-    <h2 id="siteTitle" href="/">{{ title }}</h2>
+    <h2 id="siteTitle">{{ title }}</h2>
     <ul>
       <li v-for="(item, index) in items" :key="index">
         <img v-if="item.image" :src="item.image" :href="item.link" />
@@ -41,7 +41,6 @@ function scrollFunction() {
   padding-left: 20px;
   margin: 0;
   align-self: center;
-  cursor: pointer;
   font-family: 'Comfortaa', sans-serif;
   font-weight: 700;
   font-size: 38px;
