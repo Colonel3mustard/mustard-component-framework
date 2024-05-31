@@ -35,6 +35,7 @@ interface Props {
   label?: string;
   type?: string;
   placeholder?: string;
+  required?: boolean;
 }
 
 const props = defineProps<Props>();
@@ -112,6 +113,11 @@ function validate(): void {
       }
       break;
     default:
+      if (inputText.value.trim() === '' && props.required) {
+        invalid.value = true;
+      } else {
+        invalid.value = false;
+      }
       break;
   }
 }
