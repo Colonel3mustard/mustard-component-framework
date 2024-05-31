@@ -3,9 +3,10 @@
     <legend>{{ title }}</legend>
     <div class="checkContainer">
       <MustardCheck
-        v-for="(label, index) in labels"
+        v-for="(check, index) in checks"
         :key="index"
-        :label
+        :label="check.label"
+        :id="check.id"
         v-model="checked[index]"></MustardCheck>
     </div>
   </fieldset>
@@ -13,9 +14,14 @@
 
 <script setup lang="ts">
 import MustardCheck from './MustardCheck.vue';
+interface Check {
+  label: string;
+  id: string;
+}
+
 interface Props {
   title?: string;
-  labels?: string[];
+  checks?: Check[];
 }
 defineProps<Props>();
 

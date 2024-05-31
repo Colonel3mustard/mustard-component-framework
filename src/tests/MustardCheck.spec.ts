@@ -9,6 +9,7 @@ describe('MustardCheck', () => {
       props: {
         label: 'Test Check',
         modelValue: false,
+        id: '1',
       },
     });
 
@@ -19,6 +20,7 @@ describe('MustardCheck', () => {
       props: {
         label: 'Test Check',
         modelValue: false,
+        id: '2',
       },
     });
 
