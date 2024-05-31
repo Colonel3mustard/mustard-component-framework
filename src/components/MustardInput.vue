@@ -227,6 +227,7 @@ defineExpose({
   font-weight: 400;
   font-size: 15px;
   line-height: 2;
+  width: 100%;
 }
 
 .label {
