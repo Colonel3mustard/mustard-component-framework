@@ -3,9 +3,16 @@
     <MustardNavBar :items="navItems" :title="navTitle"></MustardNavBar>
     <MustardBtn @click="btnClick()" :loading="loading" :label="testButton"></MustardBtn>
     <MustardDdn :items="itemsDropdown" :title="title"></MustardDdn>
-    <MustardInput :label="label" :placeholder="placeholder" :type="type || ''"></MustardInput>
-    <MustardCheck :label="'check1'"></MustardCheck>
-    <MustardCheckGroup :labels="['check2', 'check3']" title="Check Group Test"></MustardCheckGroup>
+    <MustardInput
+      :label="label"
+      :placeholder="placeholder"
+      :type="type || ''"
+      v-model.tel="inputText"></MustardInput>
+    <MustardCheck :label="check1" v-model="check1Model"></MustardCheck>
+    <MustardCheckGroup
+      :labels="['check2', 'check3']"
+      title="Check Group Test"
+      v-model="checkGroupModel"></MustardCheckGroup>
 
     <div class="cardList">
       <MustardCard
@@ -18,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import MustardBtn from './components/MustardBtn.vue';
 import MustardCard from './components/MustardCard.vue';
 import MustardCheck from './components/MustardCheck.vue';
@@ -47,7 +54,8 @@ const title = 'Dropdown1';
 // Input Section
 const label = 'Email';
 const placeholder = 'ex. mark@mustard.com';
-const type = 'email';
+const type = 'tel';
+const inputText = ref('');
 
 // Card Section
 const items: Card[] = [
@@ -74,6 +82,15 @@ const navItems: NavItem[] = [
   { name: 'About', link: '' },
 ];
 const navTitle = 'Mustard Contact App';
+
+// Check Section
+const check1 = 'check1';
+const check1Model = ref(false);
+watch(check1Model, () => {
+  console.log('Check1:', check1Model.value);
+});
+
+const checkGroupModel = ref([false, false]);
 </script>
 
 <style scoped>

@@ -2,7 +2,11 @@
   <fieldset class="checkGroup">
     <legend>{{ title }}</legend>
     <div class="checkContainer">
-      <MustardCheck v-for="(label, index) in labels" :key="index" :label></MustardCheck>
+      <MustardCheck
+        v-for="(label, index) in labels"
+        :key="index"
+        :label
+        v-model="checked[index]"></MustardCheck>
     </div>
   </fieldset>
 </template>
@@ -14,6 +18,8 @@ interface Props {
   labels?: string[];
 }
 defineProps<Props>();
+
+const checked = defineModel<boolean[]>({ required: true });
 </script>
 
 <style scoped>

@@ -8,6 +8,7 @@ describe('MustardCheck', () => {
     const wrapper = mount(MustardCheck, {
       props: {
         label: 'Test Check',
+        modelValue: false,
       },
     });
 
@@ -17,6 +18,7 @@ describe('MustardCheck', () => {
     const wrapper = mount(MustardCheck, {
       props: {
         label: 'Test Check',
+        modelValue: false,
       },
     });
 
