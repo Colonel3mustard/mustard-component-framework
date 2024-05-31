@@ -131,7 +131,7 @@ function getErrorText(): string {
     case InputType.tel:
       return 'Invalid phone number';
     default:
-      return '';
+      return 'Required field';
   }
 }
 
