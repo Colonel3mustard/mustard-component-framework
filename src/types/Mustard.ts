@@ -14,3 +14,8 @@ export interface NavItem {
   link: string;
   image?: string;
 }
+
+export interface SelectOption {
+  value: string;
+  label: string;
+}

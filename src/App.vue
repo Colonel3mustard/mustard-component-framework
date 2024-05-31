@@ -15,6 +15,7 @@
       :labels="['check2', 'check3']"
       title="Check Group Test"
       v-model="checkGroupModel"></MustardCheckGroup>
+    <MustardSelect :options="selectDropdown" :name="select" v-model="selectModel"></MustardSelect>
 
     <div class="cardList">
       <MustardCard
@@ -35,7 +36,8 @@ import MustardCheckGroup from './components/MustardCheckGroup.vue';
 import MustardDdn from './components/MustardDdn.vue';
 import MustardInput from './components/MustardInput.vue';
 import MustardNavBar from './components/MustardNavBar.vue';
-import { Card, NavItem } from './types/Mustard';
+import MustardSelect from './components/MustardSelect.vue';
+import { Card, NavItem, SelectOption } from './types/Mustard';
 
 // Button Section
 const testButton = 'Click me!';
@@ -88,15 +90,26 @@ const navTitle = 'Mustard Contact App';
 // Check Section
 const check1 = 'check1';
 const check1Model = ref(false);
-watch(inputText, () => {
-  console.log('Check1:', inputText.value);
-});
 
 function fileChange(url: string) {
   inputText.value = url;
 }
 
 const checkGroupModel = ref([false, false]);
+
+// Select Section
+const selectDropdown: SelectOption[] = [
+  { label: 'Option 1', value: '1' },
+  { label: 'Option 2', value: '2' },
+  { label: 'Option 3', value: '3' },
+];
+
+const selectModel = ref('1');
+
+const select = 'Select';
+watch(selectModel, () => {
+  console.log('Check1:', selectModel.value);
+});
 </script>
 
 <style scoped>
