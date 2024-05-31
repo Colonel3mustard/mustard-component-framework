@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
+  "extends": [
+    "plugin:vue/strongly-recommended",
+    "eslint:recommended",
+    "@vue/typescript/recommended",
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "vue/no-custom-modifiers-on-v-model": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": true,
+        "bracketSameLine": true,
+        "printWidth": 100,
+        "endOfLine": "auto",
+        "overrides": [
+          {
+            "files": ["**/*.jsonc", ".eslintrc", ".prettierrc"],
+            "options": {
+              "parser": "json"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
