@@ -11,10 +11,7 @@
       @fileChange="fileChange"
       v-model="check1"></MustardInput>
     <MustardCheck :label="check1" v-model="check1Model"></MustardCheck>
-    <MustardCheckGroup
-      :labels="['check2', 'check3']"
-      title="Check Group Test"
-      v-model="checkGroupModel"></MustardCheckGroup>
+
     <MustardSelect :options="selectDropdown" :name="select" v-model="selectModel"></MustardSelect>
 
     <div class="cardList">
@@ -32,7 +29,6 @@ import { ref, watch } from 'vue';
 import MustardBtn from './components/MustardBtn.vue';
 import MustardCard from './components/MustardCard.vue';
 import MustardCheck from './components/MustardCheck.vue';
-import MustardCheckGroup from './components/MustardCheckGroup.vue';
 import MustardDdn from './components/MustardDdn.vue';
 import MustardInput from './components/MustardInput.vue';
 import MustardNavBar from './components/MustardNavBar.vue';
@@ -94,8 +90,6 @@ const check1Model = ref(false);
 function fileChange(url: string) {
   inputText.value = url;
 }
-
-const checkGroupModel = ref([false, false]);
 
 // Select Section
 const selectDropdown: SelectOption[] = [

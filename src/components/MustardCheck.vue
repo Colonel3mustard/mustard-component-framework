@@ -1,17 +1,16 @@
 <template>
   <div class="container">
-    <input type="checkbox" :id="label" :name="label" v-model="checked" />
-    <label :for="label" v-show="checked"
-      ><i class="fa-solid fa-square-check" :for="label"></i
-    ></label>
-    <label :for="label" v-show="!checked"><i class="fa-regular fa-square"></i></label>
-    <label :for="label">{{ label }}</label>
+    <input type="checkbox" :id="id" :name="id" v-model="checked" />
+    <label :for="id" v-show="checked"><i class="fa-solid fa-square-check"></i></label>
+    <label :for="id" v-show="!checked"><i class="fa-regular fa-square"></i></label>
+    <label :for="id">{{ label }}</label>
   </div>
 </template>
 
 <script setup lang="ts">
 interface Props {
   label: string;
+  id: string;
 }
 defineProps<Props>();
 
