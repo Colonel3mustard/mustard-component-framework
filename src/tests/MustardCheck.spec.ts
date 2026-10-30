@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { describe } from 'node:test';
-import { expect, test } from 'vitest';
+import { describe, expect, test } from 'vitest';
 import MustardCheck from '../components/MustardCheck.vue';
 
 describe('MustardCheck', () => {
@@ -13,7 +12,8 @@ describe('MustardCheck', () => {
       },
     });
 
-    expect(wrapper.find('label').text()).toBe('Test Check');
+    const labels = wrapper.findAll('label');
+    expect(labels[labels.length - 1].text()).toBe('Test Check');
   });
   test('Check emits correctly', async () => {
     const wrapper = mount(MustardCheck, {
@@ -24,7 +24,7 @@ describe('MustardCheck', () => {
       },
     });
 
-    await wrapper.find('label').trigger('click');
-    expect((wrapper.emitted().click[0] as Array<unknown>)[0]).toBe(true);
+    await wrapper.find('input').setValue(true);
+    expect(wrapper.emitted('update:modelValue')?.[0]).toEqual([true]);
   });
 });

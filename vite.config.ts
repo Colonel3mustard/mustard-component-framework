@@ -6,11 +6,12 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(import.meta.dirname, 'src/index.ts'),
       name: 'MustardComponentLibrary',
       fileName: 'mustard-component-framework',
+      cssFileName: 'style',
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: ['vue'],
       output: {
         globals: {
