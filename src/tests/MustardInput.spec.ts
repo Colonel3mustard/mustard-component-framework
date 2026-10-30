@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { describe } from 'node:test';
-import { expect, test } from 'vitest';
+import { describe, expect, test } from 'vitest';
 import MustardInput from '../components/MustardInput.vue';
 
 describe('MustardInput', () => {
@@ -25,10 +24,15 @@ describe('MustardInput', () => {
   });
 
   test('Input blur triggers validate', async () => {
-    const wrapper = mount(MustardInput);
+    const wrapper = mount(MustardInput, {
+      props: {
+        required: true,
+        modelValue: '',
+      },
+    });
 
-    const spy = vi.spyOn(wrapper.vm, 'validate');
+    expect(wrapper.find('.error').exists()).toBe(false);
     await wrapper.find('input').trigger('blur');
-    expect(spy).toHaveBeenCalled();
+    expect(wrapper.find('.error').text()).toBe('Required field');
   });
 });

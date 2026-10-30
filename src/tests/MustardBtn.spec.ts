@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { describe } from 'node:test';
-import { expect, test } from 'vitest';
+import { describe, expect, test } from 'vitest';
 import MustardBtn from '../components/MustardBtn.vue';
 
 describe('MustardBtn', () => {
