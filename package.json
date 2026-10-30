@@ -1,6 +1,6 @@
 {
   "name": "mustard-component-framework",
-  "version": "1.2.11",
+  "version": "1.3.0",
   "type": "module",
   "files": [
     "dist"
